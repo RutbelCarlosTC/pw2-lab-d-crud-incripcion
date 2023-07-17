@@ -17,6 +17,13 @@ from .models.Student import Student
 from .models.User import User
 from .models.User_Type import User_Type
 from .models.Teacher import Teacher 
+
+def index(request):
+    return render(
+        request,
+        'index.html',
+    )
+
 # Create your views here.
 class EnrollListView(generic.ListView):
     model = Enroll
@@ -29,6 +36,7 @@ class EnrollUpdate(UpdateView):
     model = Enroll
     fields = '__all__'
 
-#class EnrollDelete(DeleteView):
-#    model=Enroll
-#    success_url= reverse_lazy('enrolls')
+class EnrollDelete(DeleteView):
+    model=Enroll
+    success_url= reverse_lazy('enrolls')
+

@@ -1,11 +1,10 @@
 {% extends "base_generic.html" %}
 {% block content %}
-<h1>Eliminar Categoria</h1>
-<p>Esta seguro de Eliminar la Categoria: {{ categoria.name }}? </p>
-<p>Se eliminaran todas las ventas relacionadas con este Categoria</p>
+<h1>Eliminar Enroll</h1>
+<p>Esta seguro de Eliminar la incripcion: {{ enroll.id }}? </p>
 <form action="" method="POST">
     {% csrf_token%}
     <input type="submit" action="" value="Si, Eliminar">
-    <a href="{% url 'categorias' %}" class="btn btn-secondary">Cancelar</a>
+    <a href="{% url 'enrolls' %}" class="btn btn-secondary">Cancelar</a>
 </form>
 {% endblock%}

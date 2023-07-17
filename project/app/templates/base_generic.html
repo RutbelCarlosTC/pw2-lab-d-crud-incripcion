@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  {% block title %}<title>Local Store</title>{% endblock %}
+  {% block title %}<title>Enrolls</title>{% endblock %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -23,15 +23,12 @@
       {% block sidebar %}
         <ul class="sidebar-nav">
             <li><a href="{% url 'index' %}">Home</a></li>
-            <li><a href="{% url 'categorias' %}">All Categories</a></li>
-            <li><a href="{% url 'productos' %}">All Products</a></li>
-            <li><a href="{% url 'compras' %}">All Shopping</a></li>
-            <li><a href="{% url 'proveedores' %}">All Providers</a></li>
+            <li><a href="{% url 'categorias' %}">All Enrolls</a></li>
         </ul>
         {% if user.is_authenticated %}
           <li>User: {{ user.get_username }}</li>
           {% if not user.is_staff%}
-          <li><a href="{% url 'my-compras' %}">Mis Compras</a></li>
+         
           {%endif%}
           <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
         {% else %}
