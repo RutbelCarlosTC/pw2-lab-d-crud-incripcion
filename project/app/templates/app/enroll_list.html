@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Lista de Inscripciones</h1>
+
+    <a href="{% url 'categoria-create' %}">+Crear Una nueva Inscripcion</a>
+    
+    {% if enroll_list %}
+    <ul>
+
+      {% for enroll in enroll_list %}
+      <li>
+        {{ enroll.enroll_id }}
+      </li>
+      {% endfor %}
+
+    </ul>
+
+    {% else %}
+      <p>No hay Inscripciones.</p>
+    {% endif %}       
+{% endblock %}
+
